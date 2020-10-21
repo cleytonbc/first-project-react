@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function TechItem({ tech, onDelete}){
 
@@ -7,6 +8,11 @@ function TechItem({ tech, onDelete}){
       {tech}
       <button onClick={onDelete} type="button">Remover</button>
     </li>  );
+}
+
+TechItem.prototype = {
+  tech: PropTypes.string,
+  onDelete: PropTypes.func.isRequired, 
 }
 
 export default TechItem;
